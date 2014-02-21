@@ -28,3 +28,4 @@ echo deploy:$1 | chpasswd
 echo "deploy ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 echo "Deploy user created"
+echo "You still need to enter the authorized key using: \"echo \"KEY DATA HERE\" > /home/deploy/.ssh/authorized_keys\""
