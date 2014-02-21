@@ -11,6 +11,12 @@
 ##
 
 ##
+# Disable the firewall
+##
+service iptables stop
+chkconfig iptables off
+
+##
 # INSTALLING ALL SOFTWARE
 # The -y parameter is here to assume YES when asked.
 ##
