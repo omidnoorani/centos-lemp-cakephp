@@ -34,7 +34,7 @@ yum install yum-priorities -y
 # Adding the epel repository for a new version of Nginx
 # For the newest version: rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-yum install mysql mysql-server nginx htop -y
+yum install nginx htop -y
 
 # Add the remi repository for the new PHP packages
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
@@ -63,26 +63,6 @@ MAXCONN="1024"
 CACHESIZE="64"
 OPTIONS="-a 666 -s /var/run/memcached/memcached.sock"
 EOF
-
-##
-# SETUP MYSQL
-#
-# We create a vagrant mysql user with a simple password
-# It deletes the anonymous user and disables remote root access
-##
-
-chkconfig --levels 235 mysqld on
-service mysqld start
-
-mysql -u root <<"EOF"
-GRANT ALL PRIVILEGES ON *.* TO vagrant@'%.%.%.%' IDENTIFIED BY "vagrantmysqlpassword" WITH GRANT OPTION;
-DROP DATABASE test;
-DELETE FROM mysql.user WHERE User='root' AND Host!='localhost';
-DELETE FROM mysql.user WHERE User='';
-FLUSH PRIVILEGES;
-EOF
-
-mysqladmin -u root password 'vagrantmysqlpassword'
 
 ##
 # SETUP PHP-FPM 
@@ -2412,6 +2392,5 @@ service nginx start
 
 echo ""
 echo ""
-echo "MySQL 'vagrant' user created with password 'vagrantmysqlpassword'"
 echo "Nginx Memcache PHP-FPM and MySQL are running"
 echo "Vagrant Bootstrapping done :-)"
