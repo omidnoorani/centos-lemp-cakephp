@@ -16,4 +16,4 @@ chmod -R g+rw /usr/share/nginx/html
 chown -R www:www /usr/share/nginx
 
 # Execute Deploy user setup
-bash <(curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/general/nginx.sh)
+bash <(curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce/deploy.sh)
