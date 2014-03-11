@@ -12,4 +12,4 @@
     --machine_type=f1-micro \
     --metadata=deploy-hq-key:"$3"
   
-  gcutil --project=$1 ssh --ssh_user=core $2 "bash <(curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce.sh)"
+  gcutil --project=$1 ssh $2 "curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce.sh | sudo bash"
