@@ -1,0 +1,1 @@
+You need to set the meta tag `deploy-hq-key` when starting a box.

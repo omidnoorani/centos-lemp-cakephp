@@ -10,24 +10,6 @@
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
-##
-# Disable the firewall
-##
-service iptables stop
-chkconfig iptables off
-
-##
-# INSTALLING ALL SOFTWARE
-# The -y parameter is here to assume YES when asked.
-##
-
-yum update yum -y
-
-# Commented out for fast vagrant up
-# Could be executed for more exact copy of the production environment
-#yum update -y
-#yum upgrade -y
-
 # Needed for extra repositories
 yum install yum-priorities -y
 
@@ -72,15 +54,6 @@ EOF
 # reasons.
 ##
 
-cat > /usr/share/nginx/html/app/webroot/phpinfo.php <<"EOF"
-<?php
-// Created by Vagrant bootstrap script
-	phpinfo();
-?>
-EOF
-
-chmod -R g+rw /usr/share/nginx/html
-chown -R www:www /usr/share/nginx
 chown -R www:www /var/lib/nginx # to allow file uploading to work
 
 # php.ini
@@ -2200,7 +2173,8 @@ EOF
 #nginx fastcgi_params
 cat > /etc/nginx/fastcgi_params <<"EOF"
 ##
-# Created by Vagrant bootstrap script
+# Created by bootstrap script
+# https://github.com/Label305/vagrant-centos
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2235,7 +2209,8 @@ EOF
 #nginx php-sock.conf
 cat > /etc/nginx/conf.d/php-sock.conf <<"EOF"
 ##
-# Created by Vagrant bootstrap script
+# Created by bootstrap script
+# https://github.com/Label305/vagrant-centos
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2247,7 +2222,8 @@ EOF
 #nginx default.conf
 cat > /etc/nginx/conf.d/default.conf <<"EOF"
 ##
-# Created by Vagrant bootstrap script
+# Created by bootstrap script
+# https://github.com/Label305/vagrant-centos
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2292,7 +2268,8 @@ EOF
 #nginx nginx.conf
 cat > /etc/nginx/nginx.conf <<"EOF"
 ##
-# Created by Vagrant bootstrap script
+# Created by bootstrap script
+# https://github.com/Label305/vagrant-centos
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2386,5 +2363,5 @@ service nginx start
 
 echo ""
 echo ""
-echo "Nginx Memcache PHP-FPM and MySQL are running"
-echo "Vagrant Bootstrapping done :-)"
+echo "Nginx, Memcache and PHP-FPM are running"
+echo "Bootstrapping done :-)"

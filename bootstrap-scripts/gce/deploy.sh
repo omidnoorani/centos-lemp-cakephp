@@ -5,8 +5,6 @@
 #
 # Can be used to bootstrap a minimal CentOS machine to be used
 # for a CakePHP application in the Google Compute Engine cloud
-#
-# You should have set the "deploy-hq-key" metadata
 # 
 # Script by Thijs Scheepers
 # Copyright 2013 Label305 B.V. All rights reserved.
