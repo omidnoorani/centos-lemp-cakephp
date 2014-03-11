@@ -1,18 +1,22 @@
 #!/bin/bash
 
 ##
-# Vagrant bootstrap script
+# Google Cloud bootstrap script
 #
 # Can be used to bootstrap a minimal CentOS machine to be used
-# for a CakePHP application
+# for a CakePHP application in the Google Compute Engine cloud
+#
+# You should have set the "deploy-hq-key" metadata
 # 
 # Script by Thijs Scheepers
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
 ##
-# SETUP DEPLOY USERS
+# SETUP DEPLOY USERS FOR DEPLOYHQ
 ##
+
+DEPLOY_HQ_KEY=$(curl http://metadata/0.1/meta-data/attributes/deploy-hq-key)
 
 useradd -m -G www deploy # setup user
 
@@ -27,5 +31,7 @@ chown deploy:deploy /home/deploy -R
 echo deploy:$1 | chpasswd
 echo "deploy ALL=NOPASSWD: ALL" >> /etc/sudoers
 
-echo "Deploy user created"
-echo "You still need to enter the authorized key using: \"echo \"KEY DATA HERE\" > /home/deploy/.ssh/authorized_keys\""
+echo $DEPLOY_HQ_KEY > /home/deploy/.ssh/authorized_keys
+
+echo "Deploy user created with authorized key:"
+echo $DEPLOY_HQ_KEY
