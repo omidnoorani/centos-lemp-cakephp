@@ -11,16 +11,16 @@
 ##
 
 # Needed for extra repositories
-yum install yum-priorities -y
+yum install -y yum-priorities
 
 # Adding the epel repository for a new version of Nginx
 # For the newest version: rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-yum install nginx htop -y
+yum install -y nginx htop
 
 # Add the remi repository for the new PHP packages
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
-yum --enablerepo=remi install php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache -y
+yum --enablerepo=remi install -y php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 echo "Applications installed"
 
