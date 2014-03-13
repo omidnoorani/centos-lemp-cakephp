@@ -20,3 +20,6 @@ curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/
 
 # Setup Newrelic
 curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce/newrelic.sh | bash
+
+# Setup Cakephp
+curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce/cakephp.sh | bash
