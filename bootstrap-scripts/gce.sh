@@ -6,7 +6,7 @@ chkconfig iptables off
 
 # UPDATING ALL SOFTWARE
 yum update yum -y
-#yum update -y
+yum update -y
 #yum upgrade -y
 
 # Execute NGINX setup
