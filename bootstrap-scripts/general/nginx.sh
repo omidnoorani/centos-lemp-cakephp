@@ -10,9 +10,6 @@
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
-# Update yum info
-yum update
-
 # Needed for extra repositories
 yum install -y yum-priorities
 
