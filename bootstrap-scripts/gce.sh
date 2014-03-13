@@ -17,3 +17,6 @@ chown -R www:www /usr/share/nginx
 
 # Execute Deploy user setup
 curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce/deploy.sh | bash
+
+# Setup Newrelic
+curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce/newrelic.sh | bash
