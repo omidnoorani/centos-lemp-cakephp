@@ -19,8 +19,8 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noar
 yum install -y nginx htop
 
 # Add the remi repository for the new PHP packages
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
-yum --enablerepo=remi install -y php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
+#rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
+yum install -y php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 echo "Applications installed"
 
