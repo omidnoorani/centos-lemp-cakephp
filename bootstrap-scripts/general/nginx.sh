@@ -16,7 +16,7 @@ yum install -y yum-priorities
 # Adding the epel repository for a new version of Nginx
 # For the newest version: rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 rpm -Uvh http://ftp.nluug.nl/pub/os/Linux/distr/fedora-epel/6/i386/epel-release-6-8.noarch.rpm
-yum install -y nginx htop
+yum --disableplugin=fastestmirror install -y nginx htop
 
 # Add the remi repository for the new PHP packages
 #rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
