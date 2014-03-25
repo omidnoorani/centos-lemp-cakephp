@@ -6,12 +6,8 @@ chkconfig iptables off
 
 # UPDATING ALL SOFTWARE
 yum update yum -y
-#yum update -y
+yum update -y
 #yum upgrade -y
-
-# to resolve ip
-# http://www.servercircle.com/RedHat-Linux-Servers/Yum-update-error-help-please_1807
-ping -c 1 google.com
 
 # Execute NGINX setup
 curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/general/nginx.sh | bash
