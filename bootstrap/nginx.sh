@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ##
-# Vagrant bootstrap script
+# Bootstrap script for both Vagrant and Production
 #
-# Can be used to bootstrap a minimal CentOS machine to be used
-# for a CakePHP application
+# Can be used to bootstrap a minimal CentOS machine 
+# to be used for a CakePHP application
 # 
 # Script by Thijs Scheepers
 # Copyright 2013 Label305 B.V. All rights reserved.
@@ -14,12 +14,9 @@
 yum install -y yum-priorities
 
 # Adding the epel repository for a new version of Nginx
-# For the newest version: rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-yum --disableplugin=fastestmirror install -y nginx htop
 
-# Add the remi repository for the new PHP packages
-#rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
+yum install -y nginx htop
 yum install -y php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 echo "Applications installed"
@@ -61,7 +58,7 @@ cat > /etc/php.ini <<"EOF"
 [PHP]
 
 ;;
-; Created by Vagrant bootstrap script
+; Created by bootstrap script
 ; Copyright 2013 Label305 B.V. All rights reserved.
 ;;
 
@@ -2174,7 +2171,7 @@ EOF
 cat > /etc/nginx/fastcgi_params <<"EOF"
 ##
 # Created by bootstrap script
-# https://github.com/Label305/vagrant-centos
+# https://github.com/Label305/centos-lemp-cakephp
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2210,7 +2207,7 @@ EOF
 cat > /etc/nginx/conf.d/php-sock.conf <<"EOF"
 ##
 # Created by bootstrap script
-# https://github.com/Label305/vagrant-centos
+# https://github.com/Label305/centos-lemp-cakephp
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2223,7 +2220,7 @@ EOF
 cat > /etc/nginx/conf.d/default.conf <<"EOF"
 ##
 # Created by bootstrap script
-# https://github.com/Label305/vagrant-centos
+# https://github.com/Label305/centos-lemp-cakephp
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
@@ -2269,7 +2266,7 @@ EOF
 cat > /etc/nginx/nginx.conf <<"EOF"
 ##
 # Created by bootstrap script
-# https://github.com/Label305/vagrant-centos
+# https://github.com/Label305/centos-lemp-cakephp
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 

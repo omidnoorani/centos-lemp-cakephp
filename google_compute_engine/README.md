@@ -1,4 +1,9 @@
-You need to set the meta tag `deploy-hq-key` when starting a box.
+Deploy to Google Compute Engine
+=======
+
+* You need to set the meta tag `deploy-hq-key` when starting a box.
+* You need to set the meta tag `newrelic-license` **before** starting a box.
+* You need to have gcutil installed.
 
 Launch server with `bash launch-with-gcutil.sh {your project name} {instance name} {deployhq key}`
 

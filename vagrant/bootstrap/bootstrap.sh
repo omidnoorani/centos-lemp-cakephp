@@ -4,11 +4,8 @@
 service iptables stop
 chkconfig iptables off
 
-# UPDATING ALL SOFTWARE
-yum update yum -y
-
 # Execute NGINX setup
-curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/general/nginx.sh | bash
+curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap/nginx.sh | bash
 
 # This part of the script symlinks the /usr/share/nginx/html
 # to the /vagrant shared folder.
@@ -27,4 +24,4 @@ echo "config.vm.synced_folder './', '/vagrant', :owner=> 'vagrant', :group=>'www
 echo ""
 
 # Execute MySQL setup
-curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/vagrant/mysql.sh | bash
+curl -s https://raw.github.com/Label305/vagrant-centos/master/vagrant/bootstrap/mysql.sh | bash
