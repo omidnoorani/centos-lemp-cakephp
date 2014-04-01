@@ -15,6 +15,6 @@ gcutil --project=$1 \
 sleep 20 # Fast execution of the ssh command will fail
 
 echo "running command:"
-echo "gcutil --project=$1 ssh --ssh_arg=\"-t\" $2 \"curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce.sh | sudo bash\""
+echo "gcutil --project=$1 ssh --ssh_arg=\"-t\" $2 \"curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/bootstrap.sh | sudo bash\""
 
-gcutil --project=$1 ssh --ssh_arg="-t" $2 "curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap-scripts/gce.sh | sudo bash"
+gcutil --project=$1 ssh --ssh_arg="-t" $2 "curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/bootstrap.sh | sudo bash"
