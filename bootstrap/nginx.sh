@@ -13,11 +13,10 @@
 # Needed for extra repositories
 yum install -y yum-priorities
 
-# Adding the epel repository for a new version of Nginx
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
-yum install -y nginx htop
-yum install -y php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
+# Installing all required packages for Nginx and PHP
+# On Vagrant these packages should already be installed for a fast bootstrap
+# For vagrant see the base.sh in the definitions folder
+yum install -y nginx htop php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 echo "Applications installed"
 

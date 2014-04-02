@@ -10,7 +10,6 @@
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 yum install mysql mysql-server -y
 
 ##
