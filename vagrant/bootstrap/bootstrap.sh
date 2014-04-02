@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Disable the firewall
-service iptables stop
-chkconfig iptables off
-
 # Execute NGINX setup
 curl -s https://raw.github.com/Label305/vagrant-centos/master/bootstrap/nginx.sh | bash
 
@@ -19,7 +15,7 @@ cat > /usr/share/nginx/html/app/webroot/phpinfo.php <<"EOF"
 ?>
 EOF
 
-echo "Add the following line to your Vagrantfile:"
+echo "Don't forget got add the following line to your Vagrantfile:"
 echo "config.vm.synced_folder './', '/vagrant', :owner=> 'vagrant', :group=>'www', :mount_options => ['dmode=775', 'fmode=775']"
 echo ""
 
