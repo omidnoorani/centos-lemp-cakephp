@@ -2362,7 +2362,6 @@ chkconfig --level 345 php-fpm on
 chkconfig --level 345 nginx on
 
 service memcached start
-service mysqld restart
 service php-fpm start
 service nginx start
 
