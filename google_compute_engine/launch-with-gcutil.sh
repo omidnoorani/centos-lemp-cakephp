@@ -1,5 +1,25 @@
 #!/bin/bash
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
  
+[ "$#" -eq 3 ] || die "3 argument required, $# provided. [GCE PROJECT] [GCE INSTANCE NAME] [DEPLOY HQ KEY]"
+
+echo "
+Are you sure you wish to create $2 in the $1 project?
+
+Make sure you have set the required metakeys in the $1 project before running this script.
+ * newrelic-license
+"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
 #pass the Google Compute Engine Project as first parameter
 #pass the Google Compute Engine Instance name as seccond parameter
 #pass the DeployHQ key as third parameter
