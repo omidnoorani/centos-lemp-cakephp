@@ -8,15 +8,6 @@ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/bootstrap/ngi
 rm -rf /usr/share/nginx/html
 ln -fs /vagrant /usr/share/nginx/html
 
-mkdir -p /usr/share/nginx/html/app/webroot
-
-cat > /usr/share/nginx/html/app/webroot/phpinfo.php <<"EOF"
-<?php
-// Created by Vagrant bootstrap script
-	phpinfo();
-?>
-EOF
-
 echo "Don't forget got add the following line to your Vagrantfile:"
 echo "config.vm.synced_folder './', '/vagrant', :owner=> 'vagrant', :group=>'www', :mount_options => ['dmode=775', 'fmode=775']"
 echo ""
