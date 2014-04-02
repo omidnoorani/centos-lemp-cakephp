@@ -15,6 +15,9 @@ enabled=1
 gpgcheck=0
 EOM
 
+# Adding specific epel repository
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
 # Installing Tool packages
 yum -y install wget htop git curl vim
 

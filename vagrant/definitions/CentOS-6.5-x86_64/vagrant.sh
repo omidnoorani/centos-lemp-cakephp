@@ -15,4 +15,4 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
 # Customize the message of the day
-echo 'Welcome to your Vagrant-built virtual machine.' > /etc/motd
+echo 'Welcome to your Label305 Vagrant CentOS LEMP VM.' > /etc/motd

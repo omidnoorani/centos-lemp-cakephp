@@ -25,11 +25,14 @@ yum -y install gcc make gcc-c++ kernel-devel-`uname -r` zlib-devel openssl-devel
 # Installing Tool packages
 yum -y install wget htop git curl vim
 
+# Adding specific epel repository
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
 # Installing Yum prio
 yum install -y yum-priorities
 
 # Installing all required packages for Nginx and PHP
-yum install -y nginx htop php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
+yum install -y nginx php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 # Make ssh faster by not waiting on DNS
 echo "UseDNS no" >> /etc/ssh/sshd_config
