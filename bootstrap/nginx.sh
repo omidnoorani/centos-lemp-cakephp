@@ -10,13 +10,21 @@
 # Copyright 2013 Label305 B.V. All rights reserved.
 ##
 
-# Needed for extra repositories
-yum install -y yum-priorities
-
 # Installing all required packages for Nginx and PHP
 # On Vagrant these packages should already be installed for a fast bootstrap
-# For vagrant see the base.sh in the definitions folder
-yum install -y nginx htop php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
+# For vagrant see the lemp.sh in the definitions folder
+
+# Adding specific epel repository
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+# Installing Yum prio
+yum install -y yum-priorities
+
+# Installing Tool packages
+yum -y install htop git curl vim
+
+# Installing all required packages for Nginx and PHP
+yum install -y nginx php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
 
 echo "Applications installed"
 
@@ -24,6 +32,7 @@ echo "Applications installed"
 # SETUP WWW
 #
 # Creating a seperate user for all things www
+# Should already be added on the vagrant machine
 ##
 
 useradd www -M # setup user

@@ -29,6 +29,7 @@ Veewee::Session.declare({
     "vagrant.sh",
     "virtualbox.sh",
     "cleanup.sh",
+    "lemp.sh",
     "zerodisk.sh"
   ],
   :postinstall_timeout => 10000
