@@ -8,6 +8,8 @@ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/bootstrap/ngi
 rm -rf /usr/share/nginx/html
 ln -fs /vagrant /usr/share/nginx/html
 
+mkdir -p /usr/share/nginx/html/app/webroot
+
 cat > /usr/share/nginx/html/app/webroot/phpinfo.php <<"EOF"
 <?php
 // Created by Vagrant bootstrap script
