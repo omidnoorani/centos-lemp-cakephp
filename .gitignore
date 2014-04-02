@@ -1,5 +1,6 @@
 .DS_Store
 .vagrant
 /vagrant/iso
+/vagrant/app
 *.iso
 *.box
