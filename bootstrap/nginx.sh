@@ -24,7 +24,7 @@ yum install -y yum-priorities
 yum -y install htop git curl vim
 
 # Installing all required packages for Nginx and PHP
-yum install -y nginx php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache
+yum install -y nginx php-fpm php-gd php-mysql php-mcrypt php-curl php-pecl-apc php-cli memcached php-pecl-memcache php-xml
 
 echo "Applications installed"
 
