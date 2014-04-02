@@ -18,3 +18,10 @@ $ veewee vbox build CentOS-6.5-x86_64
 # Eject the disks from the running VM and shutdown.
 $ vagrant package --base CentOS-6.5-x86_64 --output CentOS-6.5-x86_64-v20140311.box
 ```
+
+Creating a new box reference
+-----------
+
+http://thornelabs.net/2013/11/11/create-a-centos-65-vagrant-base-box-from-scratch-using-virtualbox.html
+https://github.com/NREL/vagrant-boxes
+
