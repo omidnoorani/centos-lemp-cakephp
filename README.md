@@ -9,7 +9,7 @@ Get started
 ----
 #### Vagrant
 
-You should have installed [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/).
+You should have [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) installed.
 
 Use the template [Vagrantfile](vagrant/Vagrantfile) and place it in your projects repository root and execute `vagrant up`. This should download a [basebox](https://github.com/Label305/centos-lemp-cakephp/releases) from this repository and execute the [base provisioning script](vagrant/bootstrap/bootstrap.sh) from this repository.
 
