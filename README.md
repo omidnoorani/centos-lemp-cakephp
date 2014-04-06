@@ -1,7 +1,7 @@
 Provisioning our server stack
 ===================
 
-Various projects at Label305 use the scripts from this repository to provision development and production environments. This ensures maximal compatibility.
+Various projects at Label305 use the scripts from this repository to provision development and production environments. This ensures maximum compatibility.
 
 The scripts execute provider-specific scripts form [`vagrant/bootstrap`](vagrant/bootstrap) and [`google_compute_engine/bootstrap`](google_compute_engine/bootstrap) as well as generic scripts from [`bootstrap`](bootstrap).
 
