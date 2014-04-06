@@ -1,16 +1,40 @@
 Provisioning our server stack
 ===================
 
-Various projects at Label305 use the scripts in this repository to provision development and production environments to ensure maximal compatibility.
+Various projects at Label305 use the scripts from this repository to provision development and production environments. This ensures maximal compatibility.
 
-[Vagrant](vagrant)
+The scripts execute provider-specific scripts form [`vagrant/bootstrap`](vagrant/bootstrap) and [`google_compute_engine/bootstrap`](google_compute_engine/bootstrap) as well as generic scripts from [`bootstrap`](bootstrap).
+
+Get started
 ----
+#### Vagrant
 
-For example the [Vagrantfile](vagrant/Vagrantfile) in a projects repository root should download their [basebox](https://github.com/Label305/centos-lemp-cakephp/releases) from this repository and execute the [base provisioning script](vagrant/bootstrap/bootstrap.sh) from this repo by downloading it through curl.
+Use the template [Vagrantfile](vagrant/Vagrantfile) in your projects repository root. And execute `vagrant up`. This should download a [basebox](https://github.com/Label305/centos-lemp-cakephp/releases) from this repository and execute the [base provisioning script](vagrant/bootstrap/bootstrap.sh) from this repository.
+
+If you whish to add your own provisioning script make sure the following line is executed in the `Vagrantfile` or in your custom provisioning script before anything else.
 
 ```sh
 $ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
 ```
+
+#### Google Compute Engine
+
+Launch a provisioned instance using gcutil and the `launch_with_gcutil.sh` script.
+
+* You need to have a [Deploy](http://deployhq.com) project and its ssh key.
+* You need to set the metatag `newrelic-license` in your projects metatag settings before starting a box.
+* You need to have gcutil installed and authenticated.
+
+Launch server with:
+```sh
+# cd into this repository
+$ bash google_compute_engine/launch-with-gcutil.sh {your project name} {instance name} {deployhq sshkey}
+```
+
+* After this you should assign the correct IP-address in the [Google Developer Console](https://console.developers.google.com/project).
+* You should add the server to the [Deploy](http://deployhq.com) project.
+* Make the needed adjustments to your config files.
+* And deploy the application using [Deploy](http://deployhq.com).
 
 The stack
 ----
