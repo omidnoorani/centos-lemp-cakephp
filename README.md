@@ -6,10 +6,16 @@ Various projects at Label305 use the scripts in this repository to provision dev
 The stack
 ----
 
-* Vagrant / Google Compute Engine
+* Vagrant (Development) / Google Compute Engine (Production)
 * CentOS
 * nginx
 * PHP-FPM
 * memcache
-* MySQL / Google Cloud SQL
+* MySQL (Development) / Google Cloud SQL (Production)
 * CakePHP
+
+The tools
+----
+
+* [Deploy](http://deployhq.com) for deployments
+* [New Relic](http://newrelic.com) for server monitoring
