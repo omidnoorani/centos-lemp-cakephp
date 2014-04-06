@@ -1,9 +1,15 @@
-centos-lemp-cakephp
+Provisioning our server stack
 ===================
 
-CentOS 6.5 LEMP with CakePHP scripts for Vagrant boxes and deployment to Google Compute Engine. Used at Label305 for webdevelopment.
+Various projects at Label305 use the scripts in this repository to provision development and production environments. For example the `Vagrantfile` in a projects repository root will download their basebox from this repository and execute the base provisioning script `vagrant\bootstrap\bootstrap.sh` from this repo.
 
+The stack
+----
+
+* Vagrant / Google Compute Engine
+* CentOS
 * nginx
 * PHP-FPM
 * memcache
 * MySQL / Google Cloud SQL
+* CakePHP
