@@ -20,3 +20,11 @@ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/google_comput
 
 # Setup Cakephp
 curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/cakephp.sh | bash
+
+# Show the versions of important software
+cat /etc/redhat-release
+nginx -v
+php-fpm -v
+
+echo ""
+echo "Google Compute Engine provisioning done!"
