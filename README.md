@@ -5,7 +5,7 @@ Various projects at Label305 use the scripts from this repository to provision d
 
 The scripts execute provider-specific scripts form [`vagrant/bootstrap`](vagrant/bootstrap) and [`google_compute_engine/bootstrap`](google_compute_engine/bootstrap) as well as generic scripts from [`bootstrap`](bootstrap).
 
-Get started
+Getting started
 ----
 #### Vagrant
 
