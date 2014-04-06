@@ -3,7 +3,7 @@ Google Compute Engine
 
 Scripts to deploy a CakePHP application to a brand new Google Compute Engine instance. These scripts are made so you only need to add a new box when these scripts are updated, and not with every deployment.
 
-* Adds a user voor [Deploy](http://deployhq.com).
+* Adds a user for [Deploy](http://deployhq.com).
 * Installs a [Newrelic](http://newrelic.com) deamon for server monitoring.
 
 Getting started
