@@ -1,16 +1,30 @@
-Vagrant CentOS 6.5 Boxes
+Vagrant
 ==============
 
-Go to [releases](https://github.com/label305/centos-lemp-cakephp/releases) to explore all the different boxes.
+You can use the [`Vagrantfile`](Vagrantfile) and [`bootstrap-example.sh`](bootstrap-example.sh) as templates for your own project.
 
-These boxes are used to create development environments at Label305.
+Getting started
+----
 
-You can use the `Vagrantfile` and `bootstrap-example.sh` example for your own project.
+You should have [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) installed.
+
+Use the template [Vagrantfile](Vagrantfile) and place it in your projects repository root and execute `vagrant up`. This should download a [basebox](https://github.com/Label305/centos-lemp-cakephp/releases) from this repository and execute the [base provisioning script](bootstrap/bootstrap.sh) from this repository.
+
+Custom script
+----
+
+If you wish to add your own provisioning script make sure the following line is executed in the `Vagrantfile` or in your custom provisioning script before anything else.
+
+```sh
+$ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
+```
+
+Take a look at [`bootstrap-example.sh`](bootstrap-example.sh).
 
 Create a new Box
 --------------
 
-Boxes were created using Veewee and the definition files.
+Boxes were created using [Veewee](https://github.com/jedi4ever/veewee) and the definition files.
 
 ```sh
 $ gem install veewee
