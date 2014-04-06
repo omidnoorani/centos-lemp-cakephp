@@ -14,9 +14,14 @@ service nginx reload # reload the new config
 rm -rf /usr/share/nginx/html
 ln -fs /vagrant /usr/share/nginx/html
 
-echo "Don't forget got add the following line to your Vagrantfile:"
-echo "config.vm.synced_folder './', '/vagrant', :owner=> 'vagrant', :group=>'www', :mount_options => ['dmode=775', 'fmode=775']"
-echo ""
-
 # Execute MySQL setup
 curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/mysql.sh | bash
+
+# Show the versions of important software
+cat /etc/redhat-release
+nginx -v
+php-fpm -v
+mysql -V
+
+echo ""
+echo "Vagrant provisioning done!"
