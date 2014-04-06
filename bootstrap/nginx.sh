@@ -2314,9 +2314,9 @@ http {
     # More over: http://technosophos.com/content/nginx-tcpnopush-sendfile-and-memcache-right-configuration?page=1
     # And: http://articles.slicehost.com/2008/5/15/ubuntu-hardy-nginx-configuration/
     ##
-    sendfile        on;
-    tcp_nopush      on;
-    tcp_nodelay     on;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
 
     ##
     # Security
