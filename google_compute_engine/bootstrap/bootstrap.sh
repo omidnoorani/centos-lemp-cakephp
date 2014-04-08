@@ -12,6 +12,9 @@ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/bootstrap/ngi
 chmod -R g+rw /usr/share/nginx/html
 chown -R www:www /usr/share/nginx
 
+# Heartbleed bug fix http://heartbleed.com/
+yum update -y openssl
+
 # Execute Deploy user setup
 curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/deploy.sh | bash
 
