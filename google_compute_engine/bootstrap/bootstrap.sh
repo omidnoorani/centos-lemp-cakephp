@@ -3,8 +3,6 @@
 # Disable the firewall
 service iptables stop
 chkconfig iptables off
-service iptables6 stop
-chkconfig iptables6 off
 
 # Execute NGINX setup
 curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/bootstrap/nginx.sh | bash
