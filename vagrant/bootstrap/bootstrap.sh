@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute NGINX setup
-curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/bootstrap/nginx.sh | bash
+curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/bootstrap/nginx.sh | bash
 
 # Disable sendfile
 # sendfile results in caching problems on VirtualBox
@@ -15,7 +15,7 @@ rm -rf /usr/share/nginx/html
 ln -fs /vagrant /usr/share/nginx/html
 
 # Execute MySQL setup
-curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/mysql.sh | bash
+curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/mysql.sh | bash
 
 # Show the versions of important software
 cat /etc/redhat-release
