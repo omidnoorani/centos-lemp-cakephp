@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provision :shell, inline: <<-SCRIPT
   
-    curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
+    curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
   SCRIPT
   
   # Create a forwarded port mapping which allows access to a specific port
