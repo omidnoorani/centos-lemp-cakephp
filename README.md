@@ -16,7 +16,7 @@ Use the template [Vagrantfile](vagrant/Vagrantfile) and place it in your project
 If you whish to add your own provisioning script make sure the following line is executed in the `Vagrantfile` or in your custom provisioning script before anything else.
 
 ```sh
-$ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
+$ curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
 ```
 
 #### Google Compute Engine
