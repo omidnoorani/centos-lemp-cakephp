@@ -16,7 +16,7 @@ Custom script
 If you wish to add your own provisioning script make sure the following line is executed in the `Vagrantfile` or in your custom provisioning script before anything else.
 
 ```sh
-$ curl -s https://raw.github.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
+$ curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/vagrant/bootstrap/bootstrap.sh | bash
 ```
 
 Take a look at [`bootstrap-example.sh`](bootstrap-example.sh).
