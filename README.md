@@ -56,7 +56,7 @@ LOGGLY_TOKEN=$(curl http://metadata/0.1/meta-data/attributes/loggly-token)
 LOGGLY_USER=$(curl http://metadata/0.1/meta-data/attributes/loggly-user)
 LOGGLY_PASSWORD=$(curl http://metadata/0.1/meta-data/attributes/loggly-password)
 
-bash configure-file-monitoring.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p$LOGGLY_PASSWORD -f FILENAME -l ALIAS
+bash configure-file-monitoring.sh -f FILENAME -l ALIAS -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD
 ```
 
 The `ALIAS` is used for reference in the log. Replace it for example with `CakePHP` or `MySQL`.
