@@ -35,6 +35,7 @@ $ bash google_compute_engine/launch-with-gcutil.sh {your project name} {instance
 
 * After this you should assign the correct IP-address in the [Google Developer Console](https://console.developers.google.com/project).
 * You should add the server to the [Deploy](http://deployhq.com) project.
+* Deploy to the `/usr/share/nginx/html` directory.
 * Make the needed adjustments to your config files.
 * And deploy the application using [Deploy](http://deployhq.com).
 
