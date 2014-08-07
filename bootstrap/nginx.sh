@@ -2365,6 +2365,15 @@ service memcached start
 service php-fpm start
 service nginx start
 
+chown -R root:www /etc/nginx/conf.d/
+chmod -R g+w /etc/nginx/conf.d/
+
+chown -R root:www /etc/php.d/
+chmod -R g+w /etc/php.d/
+
+chown -R root:www /etc/php-fpm.d/
+chmod -R g+w /etc/php-fpm.d/
+
 echo ""
 echo ""
 echo "Nginx, Memcache and PHP-FPM are running"
