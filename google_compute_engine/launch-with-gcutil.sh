@@ -28,7 +28,7 @@ gcutil --project=$1 \
   addinstance $2 \
   --image=centos \
   --persistent_boot_disk \
-  --zone=europe-west1-a \
+  --zone=europe-west1-b \
   --machine_type=f1-micro \
   --metadata=deploy-hq-key:"$3"
 
