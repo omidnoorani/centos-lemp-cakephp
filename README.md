@@ -47,6 +47,8 @@ We use [Loggly](https://label305.loggly.com) for central logging. By default PHP
 Single file monitoring can be done with the following commands in a bash script.
 
 ```sh
+# execute script as super user
+
 curl -O https://www.loggly.com/install/configure-file-monitoring.sh
 
 LOGGLY_SUBDOMAIN=$(curl http://metadata/0.1/meta-data/attributes/loggly-subdomain)
@@ -54,7 +56,7 @@ LOGGLY_TOKEN=$(curl http://metadata/0.1/meta-data/attributes/loggly-token)
 LOGGLY_USER=$(curl http://metadata/0.1/meta-data/attributes/loggly-user)
 LOGGLY_PASSWORD=$(curl http://metadata/0.1/meta-data/attributes/loggly-password)
 
-sudo bash configure-file-monitoring.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p$LOGGLY_PASSWORD -f FILENAME -l ALIAS
+bash configure-file-monitoring.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p$LOGGLY_PASSWORD -f FILENAME -l ALIAS
 ```
 
 The `ALIAS` is used for reference in the log. Replace it for example with `CakePHP` or `MySQL`.
