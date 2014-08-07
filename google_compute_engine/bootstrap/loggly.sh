@@ -26,6 +26,7 @@ if [ $HTTPCODE = "200" ]; then
   echo 0 >/selinux/enforce
   
   curl -O https://www.loggly.com/install/configure-linux.sh 
+  echo "Executing: bash configure-linux.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD"
   bash configure-linux.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD
   
   #nginx nginx.conf
