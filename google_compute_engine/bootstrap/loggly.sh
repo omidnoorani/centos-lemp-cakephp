@@ -64,6 +64,8 @@ EOF
   
   service rsyslog restart
   
+  echo "Loggly enabled"
+  
 else 
   echo "Loggly not setup in the metadata"
 fi
