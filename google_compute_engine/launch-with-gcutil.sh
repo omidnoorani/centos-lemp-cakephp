@@ -12,6 +12,10 @@ Are you sure you wish to create $2 in the $1 project?
 
 Make sure you have set the required metakeys in the $1 project before running this script.
  * newrelic-license
+ * loggly-subdomain
+ * loggly-token
+ * loggly-user
+ * loggly-password
 "
 select yn in "Yes" "No"; do
     case $yn in
