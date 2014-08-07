@@ -27,7 +27,7 @@ chmod 400 /home/deploy/.ssh/authorized_keys
 chown deploy:deploy /home/deploy -R
 
 echo deploy:$1 | chpasswd
-echo "deploy ALL = NOPASSWD : /usr/bin/yum" >> /etc/sudoers
+echo "deploy ALL=NOPASSWD : ALL" >> /etc/sudoers
 
 echo $DEPLOY_HQ_KEY > /home/deploy/.ssh/authorized_keys
 
