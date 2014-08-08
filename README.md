@@ -58,13 +58,13 @@ CakeLog::config('debug', array(
 	'engine' => 'Syslog',
 	'types' => array('notice', 'info', 'debug'),
 	'format' => "%s: CakePHP - %s",
-    	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
+	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
 ));
 CakeLog::config('error', array(
 	'engine' => 'Syslog',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'format' => "%s: CakePHP Failure - %s",
-    	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
+	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
 ));
 ```
 
