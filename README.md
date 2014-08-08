@@ -46,9 +46,28 @@ Logging
 
 We use [Loggly](https://label305.loggly.com) for central logging. By default PHP, Linux and Nginx will be monitored. But if you whish to monitor other processes you can enable it by using `syslog` or by monitoring a single file.
 
+**CakePHP version 2.4.x is required for syslog logging. Use file monitoring on legacy projects.** Setup logging through syslog in CakePHP by editing the logging engine in `app/config/bootstrap.php` like so:
+
+```php
+/**
+ * Configures default file logging options
+ */
+App::uses('CakeLog', 'Log');
+CakeLog::config('debug', array(
+	'engine' => 'Syslog',
+	'types' => array('notice', 'info', 'debug')
+));
+CakeLog::config('error', array(
+	'engine' => 'Syslog',
+	'types' => array('warning', 'error', 'critical', 'alert', 'emergency')
+));
+```
+
 Single file monitoring can be done with the following commands in a bash script.
 
 ```sh
+# execute script as super user
+
 curl -O https://www.loggly.com/install/configure-file-monitoring.sh
 
 LOGGLY_SUBDOMAIN=$(curl http://metadata/0.1/meta-data/attributes/loggly-subdomain)
@@ -56,7 +75,7 @@ LOGGLY_TOKEN=$(curl http://metadata/0.1/meta-data/attributes/loggly-token)
 LOGGLY_USER=$(curl http://metadata/0.1/meta-data/attributes/loggly-user)
 LOGGLY_PASSWORD=$(curl http://metadata/0.1/meta-data/attributes/loggly-password)
 
-sudo bash configure-file-monitoring.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p$LOGGLY_PASSWORD -f FILENAME -l ALIAS
+bash configure-file-monitoring.sh -f FILENAME -l ALIAS -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD
 ```
 
 The `ALIAS` is used for reference in the log. Replace it for example with `CakePHP` or `MySQL`.

@@ -26,7 +26,8 @@ if [ $HTTPCODE = "200" ]; then
   echo 0 >/selinux/enforce
   
   curl -O https://www.loggly.com/install/configure-linux.sh 
-  bash configure-linux.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p$LOGGLY_PASSWORD
+  echo "Executing: bash configure-linux.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD"
+  bash configure-linux.sh -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD
   
   #nginx nginx.conf
   cat > /etc/rsyslog.d/21-nginx-loggly.conf <<"EOF"
@@ -63,6 +64,8 @@ EOF
   sed -i "s/;error_log = syslog/error_log = syslog/" /etc/php.ini
   
   service rsyslog restart
+  
+  echo "Loggly enabled"
   
 else 
   echo "Loggly not setup in the metadata"
