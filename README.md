@@ -44,6 +44,23 @@ Logging
 
 We use [Loggly](https://label305.loggly.com) for central logging. By default PHP, Linux and Nginx will be monitored. But if you whish to monitor other processes you can enable it by using `syslog` or by monitoring a single file.
 
+**CakePHP version 2.4.x is required for syslog logging. Use file monitoring on legacy projects.** Setup logging through syslog in CakePHP by editing the logging engine in `app/config/bootstrap.php` like so:
+
+```php
+/**
+ * Configures default file logging options
+ */
+App::uses('CakeLog', 'Log');
+CakeLog::config('debug', array(
+	'engine' => 'Syslog',
+	'types' => array('notice', 'info', 'debug')
+));
+CakeLog::config('error', array(
+	'engine' => 'Syslog',
+	'types' => array('warning', 'error', 'critical', 'alert', 'emergency')
+));
+```
+
 Single file monitoring can be done with the following commands in a bash script.
 
 ```sh
