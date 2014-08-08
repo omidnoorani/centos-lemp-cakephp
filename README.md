@@ -40,6 +40,7 @@ $ bash google_compute_engine/launch-with-gcutil.sh {your project name} {instance
 * Make the needed adjustments to your config files.
 * Setup the execution of provisioning scripts on the server.
 * And deploy the application using [Deploy](http://deployhq.com).
+* **Don't forget to setup [logging](https://github.com/Label305/centos-lemp-cakephp#logging).**
 
 Logging
 ------
