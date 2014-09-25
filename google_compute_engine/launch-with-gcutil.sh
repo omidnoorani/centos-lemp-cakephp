@@ -48,7 +48,7 @@ done
 if [ "$#" -lt 5 ]; then
   gcutil --project=$1 \
     addinstance $2 \
-    --image=centos \
+    --image=centos-6 \
     --persistent_boot_disk \
     --zone=$ZONE \
     --machine_type=$INSTANCETYPE
@@ -56,7 +56,7 @@ else
   echo "Setting up with custom deploy-hq-key."
   gcutil --project=$1 \
     addinstance $2 \
-    --image=centos \
+    --image=centos-6 \
     --persistent_boot_disk \
     --zone=$ZONE \
     --machine_type=$INSTANCETYPE \
