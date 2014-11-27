@@ -23,7 +23,7 @@ chkconfig --levels 235 mysqld on
 service mysqld start
 
 mysql -u root <<"EOF"
-GRANT ALL PRIVILEGES ON *.* TO vagrant@'%.%.%.%' IDENTIFIED BY "vagrantmysqlpassword" WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO vagrant@'%' IDENTIFIED BY "vagrantmysqlpassword" WITH GRANT OPTION;
 DROP DATABASE test;
 DELETE FROM mysql.user WHERE User='root' AND Host!='localhost';
 DELETE FROM mysql.user WHERE User='';
