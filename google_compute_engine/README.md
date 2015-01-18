@@ -11,7 +11,7 @@ Getting started
 Launch a provisioned instance using gcutil and the `launch_with_gcutil.sh` script.
 
 * You need to have a [Deploy](http://deployhq.com) project and its ssh-key.
-* You need to set the metatags `deploy-hq-key`, `newrelic-license`, `loggly-subdomain`, `loggly-token`, `loggly-user`, `loggly-password` in your projects metatag settings before starting a box.
+* You need to set the metatags `deploy-hq-key`, `newrelic-license` in your projects metatag settings before starting a box.
 * You need to have setup logging in your application with syslog.
 * You need to have gcutil installed and authenticated.
 * Keep the [naming conventions](http://intranet.label305.com/technology/google-cloud.html) in mind.
