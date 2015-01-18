@@ -29,10 +29,6 @@ Zone: $ZONE
 Make sure you have set the required metakeys in the $1 project before running this script.
  * newrelic-license
  * deploy-hq-key
- * loggly-subdomain
- * loggly-token
- * loggly-user
- * loggly-password
 "
 select yn in "Yes" "No"; do
     case $yn in
