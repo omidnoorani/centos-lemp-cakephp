@@ -24,7 +24,7 @@ $ curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/
 Launch a provisioned instance using gcutil and the `launch_with_gcutil.sh` script.
 
 * You need to have a [Deploy](http://deployhq.com) project and its ssh-key.
-* You need to set the metatags `deploy-hq-key`, `newrelic-license`, `loggly-subdomain`, `loggly-token`, `loggly-user`, `loggly-password` in your projects metatag settings before starting a box.
+* You need to set the metatags `deploy-hq-key`, `newrelic-license` in your projects metatag settings before starting a box.
 * You need to have setup logging in your application with syslog.
 * You need to have gcutil installed and authenticated.
 * Keep the [naming conventions](http://intranet.label305.com/technology/google-cloud.html) in mind.
@@ -40,50 +40,6 @@ $ bash google_compute_engine/launch-with-gcutil.sh {your project name} {instance
 * Make the needed adjustments to your config files.
 * Setup the execution of provisioning scripts on the server.
 * And deploy the application using [Deploy](http://deployhq.com).
-* **Don't forget to setup [logging](https://github.com/Label305/centos-lemp-cakephp#logging).**
-
-Logging
-------
-
-We use [Loggly](https://label305.loggly.com) for central logging. By default PHP, Linux and Nginx will be monitored. But if you whish to monitor other processes you can enable it by using `syslog` or by monitoring a single file.
-
-**CakePHP version 2.4.x is required for syslog logging. Use file monitoring on legacy projects.** Setup logging through syslog in CakePHP by editing the logging engine in `app/config/bootstrap.php` like so:
-
-```php
-/**
- * Configures default file logging options
- */
-App::uses('CakeLog', 'Log');
-CakeLog::config('debug', array(
-	'engine' => 'Syslog',
-	'types' => array('notice', 'info', 'debug'),
-	'format' => "%s: CakePHP - %s",
-	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
-));
-CakeLog::config('error', array(
-	'engine' => 'Syslog',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'format' => "%s: CakePHP Failure - %s",
-	'prefix' => 'YourApp' // Enter this info yourself, for example: "Seezers"
-));
-```
-
-Single file monitoring can be done with the following commands in a bash script.
-
-```sh
-# execute script as super user
-
-curl -O https://www.loggly.com/install/configure-file-monitoring.sh
-
-LOGGLY_SUBDOMAIN=$(curl http://metadata/0.1/meta-data/attributes/loggly-subdomain)
-LOGGLY_TOKEN=$(curl http://metadata/0.1/meta-data/attributes/loggly-token)
-LOGGLY_USER=$(curl http://metadata/0.1/meta-data/attributes/loggly-user)
-LOGGLY_PASSWORD=$(curl http://metadata/0.1/meta-data/attributes/loggly-password)
-
-bash configure-file-monitoring.sh -f FILENAME -l ALIAS -a $LOGGLY_SUBDOMAIN -t $LOGGLY_TOKEN -u $LOGGLY_USER -p $LOGGLY_PASSWORD
-```
-
-The `ALIAS` is used for reference in the log. Replace it for example with `CakePHP` or `MySQL`.
 
 The stack
 ----
