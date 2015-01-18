@@ -22,8 +22,8 @@ curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/go
 # Setup Cakephp
 curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/cakephp.sh | bash
 
-# Setup Loggly
-curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/loggly.sh | bash
+# Disabled Setup Loggly
+# curl -s https://raw.githubusercontent.com/Label305/centos-lemp-cakephp/master/google_compute_engine/bootstrap/loggly.sh | bash
 
 # Show the versions of important software
 cat /etc/redhat-release
